@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>مشاريعنا | Smart Land</title>
+  <meta name="description" content="معرض مشاريع Smart Land: Smart Signal وMyKey وSada وWelcome وأنظمة إدارة المشافي.">
+  <link rel="icon" type="image/webp" href="assets/images/favicon.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">انتقل إلى المحتوى</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img src="assets/images/logo-main.webp" width="40" height="40" alt="شعار Smart Land">
+        <span>Smart Land</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="القائمة">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="التنقل الرئيسي">
+        <a href="index.html">الرئيسية</a>
+        <a href="about.html">من نحن</a>
+        <a href="projects.html" aria-current="page">مشاريعنا</a>
+        <a href="contact.html">تواصل معنا</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <h1>مشاريعنا</h1>
+        <p>خمسة مشاريع من محفظة الشركة، تغطي الإتاحة والعقارات والتعليم والتجارة الإلكترونية والصحة.</p>
+      </div>
+    </section>
+
+    <!-- ========== معرض المشاريع (فلتر + lightbox) ========== -->
+    <section class="section">
+      <div class="container">
+        <!-- TODO[R2]: راجع التصميم على الموبايل وأضف تفاصيل لكل مشروع -->
+        <!-- TODO[R4]: صور المشاريع الخمس (نفس الأسماء، WEBP، ≤250KB) -->
+        <!-- TODO[R7]: أضف لكل مشروع وصفاً موثَّقاً أطول (مصدره موقع الشركة أو الذكاء الاصطناعي مع التسجيل في docs/ai-log.md) -->
+        <div class="filters" role="group" aria-label="تصفية المشاريع حسب القطاع">
+          <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">الكل</button>
+          <button class="filter-btn" type="button" data-filter="access" aria-pressed="false">الإتاحة</button>
+          <button class="filter-btn" type="button" data-filter="realestate" aria-pressed="false">عقارات ومركبات</button>
+          <button class="filter-btn" type="button" data-filter="education" aria-pressed="false">تعليم</button>
+          <button class="filter-btn" type="button" data-filter="ecommerce" aria-pressed="false">تجارة إلكترونية</button>
+          <button class="filter-btn" type="button" data-filter="health" aria-pressed="false">صحة</button>
+        </div>
+
+        <div class="grid" id="project-grid">
+          <article class="project" data-sector="access">
+            <button class="project__media" type="button" data-lightbox aria-label="تكبير صورة Smart Signal">
+              <img src="assets/images/project-smart-signal.webp" width="1200" height="800" loading="lazy" alt="واجهة تطبيق Smart Signal لترجمة لغة الإشارة">
+            </button>
+            <div class="project__body">
+              <span class="tag">الإتاحة والذكاء الاصطناعي</span>
+              <h2>Smart Signal</h2>
+              <p>تطبيق يترجم لغة الإشارة باستخدام الذكاء الاصطناعي، ليسهّل التواصل بين الصم وضعاف السمع ومحيطهم.</p>
+            </div>
+          </article>
+
+          <article class="project" data-sector="realestate">
+            <button class="project__media" type="button" data-lightbox aria-label="تكبير صورة MyKey">
+              <img src="assets/images/project-mykey.webp" width="1200" height="800" loading="lazy" alt="واجهة منصة MyKey للإعلان عن العقارات والمركبات">
+            </button>
+            <div class="project__body">
+              <span class="tag">عقارات ومركبات</span>
+              <h2>MyKey</h2>
+              <p>منصة للإعلان عن العقارات والمركبات المعروضة للبيع والإيجار، تجمع العارضين بالباحثين في مكان واحد.</p>
+            </div>
+          </article>
+
+          <article class="project" data-sector="education">
+            <button class="project__media" type="button" data-lightbox aria-label="تكبير صورة Sada">
+              <img src="assets/images/project-sada.webp" width="1200" height="800" loading="lazy" alt="واجهة منصة Sada للتعلم عن بعد">
+            </button>
+            <div class="project__body">
+              <span class="tag">تعليم</span>
+              <h2>Sada</h2>
+              <p>منصة للتعلم عن بعد تتيح للمتعلمين الوصول إلى المحتوى التعليمي في أي وقت ومن أي مكان.</p>
+            </div>
+          </article>
+
+          <article class="project" data-sector="ecommerce">
+            <button class="project__media" type="button" data-lightbox aria-label="تكبير صورة Welcome">
+              <img src="assets/images/project-welcome.webp" width="1200" height="800" loading="lazy" alt="واجهة تطبيق Welcome للتسوق الإلكتروني متعدد المتاجر">
+            </button>
+            <div class="project__body">
+              <span class="tag">تجارة إلكترونية</span>
+              <h2>Welcome</h2>
+              <p>تطبيق للتسوق الإلكتروني متعدد المتاجر، يجمع عدة متاجر في تجربة شراء واحدة.</p>
+            </div>
+          </article>
+
+          <article class="project" data-sector="health">
+            <button class="project__media" type="button" data-lightbox aria-label="تكبير صورة أنظمة إدارة المشافي">
+              <img src="assets/images/project-hospital.webp" width="1200" height="800" loading="lazy" alt="واجهة نظام إدارة المشافي">
+            </button>
+            <div class="project__body">
+              <span class="tag">صحة</span>
+              <h2>أنظمة إدارة المشافي</h2>
+              <p>أنظمة رقمية لإدارة عمل المشافي، تنظّم العمليات الإدارية وتدعم الكوادر الطبية.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== إنجازات وقصص نجاح ========== -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <span class="eyebrow">إنجازاتنا</span>
+          <h2>قصص نجاح</h2>
+        </div>
+        <!-- TODO[R7]: أضف قصص نجاح حقيقية وموثَّقة من مصادر الشركة؛ المحتوى الحالي مبني على نص الوظيفة فقط -->
+        <div class="grid">
+          <article class="card reveal">
+            <span class="icon"><svg aria-hidden="true"><use href="#i-compass"/></svg></span>
+            <h3>خبرة منذ 2011</h3>
+            <p>أكثر من عقد من تقديم الاستشارات والحلول البرمجية لقطاعات مختلفة.</p>
+          </article>
+          <article class="card reveal">
+            <span class="icon"><svg aria-hidden="true"><use href="#i-users"/></svg></span>
+            <h3>محفظة متنوعة</h3>
+            <p>مشاريع في خمسة قطاعات، من التعليم والصحة إلى التجارة والعقارات والإتاحة.</p>
+          </article>
+          <article class="card reveal">
+            <span class="icon"><svg aria-hidden="true"><use href="#i-cpu"/></svg></span>
+            <h3>ذكاء اصطناعي في المنتجات</h3>
+            <p>دمج الذكاء الاصطناعي في الحلول، ومن أبرز أمثلته ترجمة لغة الإشارة في Smart Signal.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== فيديو معرض المشاريع ========== -->
+    <section class="section section--dark" id="projects-video">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">فيديو المشاريع</span>
+          <h2>أعمالنا بالصورة والصوت</h2>
+          <p class="lead">اضغط أي جملة في النص لتنتقل إلى لحظتها في الفيديو.</p>
+        </div>
+        <!-- TODO[R6]: assets/video/projects.mp4 + assets/video/projects.ar.vtt + poster-projects.webp -->
+        <div class="video-block" data-video-block>
+          <div class="video-player">
+            <video controls preload="metadata" playsinline poster="assets/images/poster-projects.webp">
+              <source src="assets/video/projects.mp4" type="video/mp4">
+              <track kind="subtitles" src="assets/video/projects.ar.vtt" srclang="ar" label="العربية" default>
+              متصفحك لا يدعم تشغيل الفيديو.
+            </video>
+            <p class="video-fallback" hidden>الفيديو قيد الإنتاج وسيظهر هنا قريباً.</p>
+          </div>
+          <aside class="transcript" aria-label="النص المرافق للفيديو">
+            <h3>النص المرافق</h3>
+            <ol data-transcript><li><button type="button" disabled>سيظهر النص هنا مع تشغيل الفيديو.</button></li></ol>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta">
+      <div class="container reveal">
+        <h2>هل لديك مشروع في بالك؟</h2>
+        <p class="lead">أخبرنا عن فكرتك ونحوّلها معاً إلى منتج.</p>
+        <div class="btn-row"><a class="btn btn--primary" href="contact.html">تواصل معنا</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html"><img src="assets/images/logo-main.webp" width="40" height="40" alt=""><span>Smart Land</span></a>
+          <p>شركة استشارات وحلول تقنية عالمية تأسست عام 2011.</p>
+        </div>
+        <nav aria-label="روابط التذييل">
+          <h3>الموقع</h3>
+          <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="about.html">من نحن</a></li>
+            <li><a href="projects.html">مشاريعنا</a></li>
+            <li><a href="contact.html">تواصل معنا</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h3>تواصل</h3>
+          <ul><li><a href="mailto:info@smartland.example">info@smartland.example</a></li></ul>
+        </div>
+      </div>
+      <p class="footer-note">© <span data-year>2026</span> Smart Land. موقع أُنجز ضمن وظيفة مقرر نظم الوسائط المتعددة، الجامعة الافتراضية السورية.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/video-sync.js" defer></script>
+</body>
+</html>

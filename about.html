@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>من نحن | Smart Land</title>
+  <meta name="description" content="رسالة Smart Land وتوجهاتها وطريقة عملها في تقديم حلول برمجية مخصصة مدمجة بالذكاء الاصطناعي.">
+  <link rel="icon" type="image/webp" href="assets/images/favicon.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">انتقل إلى المحتوى</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img src="assets/images/logo-main.webp" width="40" height="40" alt="شعار Smart Land">
+        <span>Smart Land</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="القائمة">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="site-nav" aria-label="التنقل الرئيسي">
+        <a href="index.html">الرئيسية</a>
+        <a href="about.html" aria-current="page">من نحن</a>
+        <a href="projects.html">مشاريعنا</a>
+        <a href="contact.html">تواصل معنا</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <h1>من نحن</h1>
+        <p>شركة استشارات وحلول تقنية عالمية تأسست عام 2011، تجمع بين الخبرة البرمجية والذكاء الاصطناعي.</p>
+      </div>
+    </section>
+
+    <!-- ========== الرسالة والتوجهات ========== -->
+    <section class="section">
+      <div class="container">
+        <!-- TODO[R2]: أكمل الصفحة بحسب تصميم R3 وأضف أقسامك الخاصة بنفس الأصناف -->
+        <!-- TODO[R7]: نصوص هذا القسم مسودة مبنية على نص الوظيفة؛ راجعها وأضف محتوى موثَّق -->
+        <div class="grid">
+          <article class="card reveal">
+            <span class="icon"><svg aria-hidden="true"><use href="#i-compass"/></svg></span>
+            <h2>رسالتنا</h2>
+            <p>تقديم حلول برمجية متطورة ومخصصة تلبّي احتياجات القطاعات المختلفة، وتحويل الأفكار إلى منتجات رقمية تعمل في الواقع.</p>
+          </article>
+          <article class="card reveal">
+            <span class="icon"><svg aria-hidden="true"><use href="#i-cpu"/></svg></span>
+            <h2>توجهنا نحو الذكاء الاصطناعي</h2>
+            <p>ندمج الذكاء الاصطناعي في عملياتنا ومنتجاتنا، لنقدّم حلولاً أسرع وأدق وأقرب إلى احتياج المستخدم.</p>
+          </article>
+          <article class="card reveal">
+            <span class="icon"><svg aria-hidden="true"><use href="#i-users"/></svg></span>
+            <h2>قطاعات نخدمها</h2>
+            <p>الإتاحة، العقارات والمركبات، التعليم، التجارة الإلكترونية، والقطاع الصحي.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== الصورة + كيف نعمل ========== -->
+    <section class="section section--alt">
+      <div class="container split">
+        <!-- TODO[R4]: صورة معالجة للفريق أو لمكان العمل -->
+        <img class="reveal" src="assets/images/about-team.webp" width="1200" height="800" loading="lazy" alt="فريق Smart Land يناقش تصميم حل برمجي">
+        <div class="reveal">
+          <span class="eyebrow">طريقة العمل</span>
+          <h2>كيف نعمل؟</h2>
+          <!-- TODO[R7]: تحقق من هذه الخطوات وعدّلها لتناسب ما تعتمده الشركة فعلاً -->
+          <ol class="steps">
+            <li><div><strong>نفهم الاحتياج</strong>نستمع إلى العميل ونحلل قطاعه ومشكلته.</div></li>
+            <li><div><strong>نصمم الحل</strong>نرسم تجربة المستخدم والبنية التقنية المناسبة.</div></li>
+            <li><div><strong>نبني ونختبر</strong>نطوّر المنتج مع دمج الذكاء الاصطناعي حيث يفيد.</div></li>
+            <li><div><strong>نواكب ونطوّر</strong>ندعم الحل بعد الإطلاق ونحسّنه باستمرار.</div></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta">
+      <div class="container reveal">
+        <h2>تعرّف على أعمالنا</h2>
+        <p class="lead">شاهد المشاريع التي بنيناها لقطاعات مختلفة.</p>
+        <div class="btn-row"><a class="btn btn--primary" href="projects.html">معرض المشاريع</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html"><img src="assets/images/logo-main.webp" width="40" height="40" alt=""><span>Smart Land</span></a>
+          <p>شركة استشارات وحلول تقنية عالمية تأسست عام 2011.</p>
+        </div>
+        <nav aria-label="روابط التذييل">
+          <h3>الموقع</h3>
+          <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="about.html">من نحن</a></li>
+            <li><a href="projects.html">مشاريعنا</a></li>
+            <li><a href="contact.html">تواصل معنا</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h3>تواصل</h3>
+          <ul><li><a href="mailto:info@smartland.example">info@smartland.example</a></li></ul>
+        </div>
+      </div>
+      <p class="footer-note">© <span data-year>2026</span> Smart Land. موقع أُنجز ضمن وظيفة مقرر نظم الوسائط المتعددة، الجامعة الافتراضية السورية.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

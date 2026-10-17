@@ -1,0 +1,50 @@
+/* ==========================================================================
+   tokens.css — هوية Smart Land (المتغيرات فقط)
+   TODO[R3]: استبدل القيم أدناه بقيم دليل الهوية المعتمد. لا تغيّر أسماء المتغيرات.
+   باقي ملفات CSS تقرأ من هنا فقط، فتغيير هذا الملف يغيّر مظهر الموقع كله.
+   ========================================================================== */
+
+:root {
+  /* الألوان (قيم مؤقتة حتى اعتماد الهوية) */
+  --color-primary: #0b3a6f;
+  --color-primary-contrast: #ffffff;
+  --color-accent: #18b6a4;
+  --color-accent-contrast: #062925;
+  --color-highlight: #f2a93b;
+
+  --color-bg: #f6f8fb;
+  --color-surface: #ffffff;
+  --color-dark: #08213f;
+  --color-dark-contrast: #eaf1fa;
+
+  --color-text: #14202e;
+  --color-text-muted: #55657a;
+  --color-border: #dbe3ee;
+
+  /* الخطوط (Tajawal تُحمَّل من Google Fonts في رأس كل صفحة) */
+  --font-body: "Tajawal", "Segoe UI", Tahoma, Arial, sans-serif;
+  --font-display: "Tajawal", "Segoe UI", Tahoma, Arial, sans-serif;
+
+  /* الأشكال */
+  --radius-sm: 8px;
+  --radius: 16px;
+  --radius-lg: 28px;
+  --shadow: 0 10px 30px rgba(8, 33, 63, 0.10);
+  --shadow-strong: 0 18px 50px rgba(8, 33, 63, 0.22);
+
+  /* المسافات والعرض */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 5rem;
+  --container: 1160px;
+  --gutter: 20px;
+
+  /* الحركة */
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur: 0.5s;
+}

@@ -1,0 +1,10 @@
+.DS_Store
+Thumbs.db
+*.psd
+*.xcf
+*.kdenlive
+*.drp
+__pycache__/
+# مصادر الفيديو الخام لا تُرفع (ارفع المخرجات النهائية MP4 فقط)
+assets/video/raw/
+assets/audio/raw/
