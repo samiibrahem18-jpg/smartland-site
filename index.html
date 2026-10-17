@@ -65,10 +65,55 @@
     <!-- ========== إحصاءات سريعة (كلها من نص الوظيفة) ========== -->
     <div class="container">
       <div class="stats reveal">
-        <div class="stat"><strong>2011</strong><span>سنة التأسيس</span></div>
-        <div class="stat"><strong>5</strong><span>قطاعات نخدمها</span></div>
-        <div class="stat"><strong>5</strong><span>مشاريع في معرضنا</span></div>
-        <div class="stat"><strong>AI</strong><span>مدمج في عملياتنا</span></div>
+        <!-- كل مربع زر: الوجه الأمامي يعرض العنوان، والخلفي يعرض النتيجة. الضغط يقلبه (js/main.js + css/components.css) -->
+        <button class="stat" type="button" aria-pressed="false">
+          <span class="stat__inner">
+            <span class="stat__face stat__face--front">
+              <span class="stat__label">سنة التأسيس</span>
+              <span class="stat__hint">اضغط لتكشف الرقم</span>
+            </span>
+            <span class="stat__face stat__face--back">
+              <strong class="stat__value">2011</strong>
+              <span class="stat__label">سنة التأسيس</span>
+            </span>
+          </span>
+        </button>
+        <button class="stat" type="button" aria-pressed="false">
+          <span class="stat__inner">
+            <span class="stat__face stat__face--front">
+              <span class="stat__label">قطاعات نخدمها</span>
+              <span class="stat__hint">اضغط لتكشف الرقم</span>
+            </span>
+            <span class="stat__face stat__face--back">
+              <strong class="stat__value">5</strong>
+              <span class="stat__label">قطاعات نخدمها</span>
+            </span>
+          </span>
+        </button>
+        <button class="stat" type="button" aria-pressed="false">
+          <span class="stat__inner">
+            <span class="stat__face stat__face--front">
+              <span class="stat__label">مشاريع في معرضنا</span>
+              <span class="stat__hint">اضغط لتكشف الرقم</span>
+            </span>
+            <span class="stat__face stat__face--back">
+              <strong class="stat__value">5</strong>
+              <span class="stat__label">مشاريع في معرضنا</span>
+            </span>
+          </span>
+        </button>
+        <button class="stat" type="button" aria-pressed="false">
+          <span class="stat__inner">
+            <span class="stat__face stat__face--front">
+              <span class="stat__label">الذكاء الاصطناعي</span>
+              <span class="stat__hint">اضغط لتكشف المزيد</span>
+            </span>
+            <span class="stat__face stat__face--back">
+              <strong class="stat__value">AI</strong>
+              <span class="stat__label">مدمج في عملياتنا</span>
+            </span>
+          </span>
+        </button>
       </div>
     </div>
 
@@ -89,7 +134,7 @@
     </section>
 
     <!-- ========== الخدمات ========== -->
-    <section class="section section--alt">
+    <section class="section section--services">
       <div class="container">
         <div class="section-head section-head--center reveal">
           <span class="eyebrow">خدماتنا</span>

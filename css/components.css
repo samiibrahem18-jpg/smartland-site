@@ -145,21 +145,114 @@
   position: relative;
   z-index: 2;
 }
+/* المربع = زر. perspective هنا تعطي عمقاً ثلاثي الأبعاد للقلب */
 .stat {
-  padding: var(--space-5);
+  display: block;
+  padding: 0;
+  font: inherit;
   text-align: center;
+  color: inherit;
+  background: none;
+  border: 0;
+  border-radius: var(--radius);
+  cursor: pointer;
+  perspective: 900px;
+}
+/* هذا العنصر هو الذي يدور (الكلاس flip-diagonal-2-tl يُضاف عليه من main.js) */
+.stat__inner {
+  position: relative;
+  display: block;
+  min-height: 150px;
+  transform-style: preserve-3d;
+}
+.stat__face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  padding: var(--space-4);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
-.stat strong {
-  display: block;
-  font-size: 2.4rem;
+/* الوجه الخلفي مقلوب مسبقاً حول المحور نفسه، فيظهر مستقيماً بعد القلب */
+.stat__face--back {
+  color: var(--color-primary-contrast);
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  -webkit-transform: rotate3d(-1, 1, 0, 180deg);
+          transform: rotate3d(-1, 1, 0, 180deg);
+}
+.stat__label { font-weight: 700; color: var(--color-dark); }
+.stat__hint { font-size: 0.85rem; color: var(--color-text-muted); }
+.stat__value {
+  font-size: 2.6rem;
   line-height: 1.2;
-  color: var(--color-primary);
+  color: var(--color-primary-contrast);
 }
-.stat span { color: var(--color-text-muted); font-weight: 700; }
+.stat__face--back .stat__label { color: color-mix(in srgb, var(--color-primary-contrast) 85%, transparent); }
+.stat:hover .stat__face--front { border-color: var(--color-accent); }
+
+/* ----------------------------------------------
+ * انيمشن القلب: Animista (flip-diagonal-2-tl)
+ * Licensed under FreeBSD License. http://animista.net/license
+ * ---------------------------------------------- */
+.flip-diagonal-2-tl {
+	-webkit-animation: flip-diagonal-2-tl 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	        animation: flip-diagonal-2-tl 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+@-webkit-keyframes flip-diagonal-2-tl {
+  0% {
+    -webkit-transform: rotate3d(-1, 1, 0, 0deg);
+            transform: rotate3d(-1, 1, 0, 0deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(-1, 1, 0, -180deg);
+            transform: rotate3d(-1, 1, 0, -180deg);
+  }
+}
+@keyframes flip-diagonal-2-tl {
+  0% {
+    -webkit-transform: rotate3d(-1, 1, 0, 0deg);
+            transform: rotate3d(-1, 1, 0, 0deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(-1, 1, 0, -180deg);
+            transform: rotate3d(-1, 1, 0, -180deg);
+  }
+}
+
+/* القلب العكسي (إضافتنا): يعيد المربع إلى وجهه الأمامي عند الضغط مرة ثانية */
+.flip-diagonal-2-tl-back {
+	-webkit-animation: flip-diagonal-2-tl-back 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	        animation: flip-diagonal-2-tl-back 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+@-webkit-keyframes flip-diagonal-2-tl-back {
+  0% {
+    -webkit-transform: rotate3d(-1, 1, 0, -180deg);
+            transform: rotate3d(-1, 1, 0, -180deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(-1, 1, 0, 0deg);
+            transform: rotate3d(-1, 1, 0, 0deg);
+  }
+}
+@keyframes flip-diagonal-2-tl-back {
+  0% {
+    -webkit-transform: rotate3d(-1, 1, 0, -180deg);
+            transform: rotate3d(-1, 1, 0, -180deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(-1, 1, 0, 0deg);
+            transform: rotate3d(-1, 1, 0, 0deg);
+  }
+}
 
 /* ---------- البطاقات ---------- */
 .grid {
@@ -428,4 +521,110 @@ dialog.lightbox p { margin: 0; padding: var(--space-3) var(--space-5); }
   font-size: 0.9rem;
   border-block-start: 1px solid rgba(255, 255, 255, 0.14);
   opacity: 0.75;
+}
+
+/* ============================================================
+   قسم الخدمات (الصفحة الرئيسية فقط) — بطاقات فاتحة بشريط ملوّن،
+   أيقونة متدرّجة، وتمتلئ البطاقة بلون الهوية عند المرور.
+   مقيّد بـ .section--services حتى لا يمسّ بطاقات about/projects.
+   كل الألوان من tokens.css فقط.
+   ============================================================ */
+/* شريط بلون أغمق قليلاً من الصفحة ليفصل القسم عمّا قبله وبعده وتبرز البطاقات البيضاء */
+.section--services {
+  background: color-mix(in srgb, var(--color-primary) 7%, var(--color-bg));
+  border-block: 1px solid var(--color-border);
+}
+.section--services .grid { counter-reset: svc; }
+
+.section--services .card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  counter-increment: svc;
+  padding: var(--space-6) var(--space-5) var(--space-5);
+  background: var(--color-surface);
+  border-color: var(--color-border);
+  border-block-start: 5px solid var(--color-accent);
+  box-shadow: 0 2px 0 var(--color-border), var(--shadow);
+  transition:
+    opacity var(--dur) var(--ease),
+    transform 0.35s var(--ease),
+    box-shadow 0.35s var(--ease),
+    border-color 0.35s var(--ease);
+}
+.section--services .card:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-strong);
+}
+
+.section--services .card h3 {
+  margin: 0 0 var(--space-2);
+  font-size: 1.35rem;
+  color: var(--color-primary);
+  transition: color 0.35s var(--ease);
+}
+.section--services .card p {
+  line-height: 1.8;
+  transition: color 0.35s var(--ease);
+}
+
+/* رقم الخدمة كعلامة مائية في الزاوية */
+.section--services .card::after {
+  content: counter(svc, decimal-leading-zero);
+  position: absolute;
+  inset-block-start: var(--space-3);
+  inset-inline-end: var(--space-4);
+  font-size: 3.6rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--color-primary);
+  opacity: 0.08;
+  pointer-events: none;
+  transition: color 0.35s var(--ease), opacity 0.35s var(--ease);
+}
+
+/* طبقة التعبئة التي تظهر عند المرور */
+.section--services .card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(420px 220px at 100% 0%, color-mix(in srgb, var(--color-accent) 45%, transparent), transparent 70%),
+    linear-gradient(160deg, var(--color-primary), var(--color-dark));
+  opacity: 0;
+  transition: opacity 0.4s var(--ease);
+}
+
+.section--services .icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: var(--space-5);
+  border-radius: 18px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--color-primary) 32%, transparent);
+  transition: transform 0.35s var(--ease), background 0.35s var(--ease), color 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+.section--services .icon svg { width: 28px; height: 28px; }
+
+.section--services .card:hover::before { opacity: 1; }
+.section--services .card:hover h3 { color: #fff; }
+.section--services .card:hover p { color: color-mix(in srgb, var(--color-dark-contrast) 85%, transparent); }
+.section--services .card:hover::after { color: #fff; opacity: 0.1; }
+.section--services .card:hover .icon {
+  transform: scale(1.08) rotate(-6deg);
+  color: var(--color-dark);
+  background: var(--color-highlight);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* لمستخدمي لوحة المفاتيح: نفس تأثير المرور عند التركيز داخل البطاقة (إن أضيف رابط لاحقاً) */
+.section--services .card:focus-within::before { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .section--services .card:hover,
+  .section--services .card:hover .icon { transform: none; }
 }
