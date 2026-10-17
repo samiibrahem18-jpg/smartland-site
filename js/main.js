@@ -10,7 +10,9 @@
       nav.classList.toggle("is-open", open);
       toggle.setAttribute("aria-expanded", String(open));
     };
-    toggle.addEventListener("click", () => setOpen(!nav.classList.contains("is-open")));
+    toggle.addEventListener("click", () =>
+      setOpen(!nav.classList.contains("is-open")),
+    );
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") setOpen(false);
     });
@@ -31,7 +33,7 @@
           }
         }
       },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
     );
     revealEls.forEach((el) => io.observe(el));
   } else {
@@ -45,7 +47,9 @@
     filterBtns.forEach((btn) => {
       btn.addEventListener("click", () => {
         const f = btn.dataset.filter;
-        filterBtns.forEach((b) => b.setAttribute("aria-pressed", String(b === btn)));
+        filterBtns.forEach((b) =>
+          b.setAttribute("aria-pressed", String(b === btn)),
+        );
         projects.forEach((p) => {
           p.hidden = !(f === "all" || p.dataset.sector === f);
         });
@@ -76,7 +80,9 @@
         dlg.showModal();
       });
     });
-    dlg.querySelector(".lightbox__close").addEventListener("click", () => dlg.close());
+    dlg
+      .querySelector(".lightbox__close")
+      .addEventListener("click", () => dlg.close());
     // الإغلاق عند الضغط على الخلفية
     dlg.addEventListener("click", (e) => {
       if (e.target === dlg) dlg.close();
@@ -91,13 +97,47 @@
       const d = new FormData(form);
       const subject = encodeURIComponent("رسالة من موقع Smart Land");
       const body = encodeURIComponent(
-        `الاسم: ${d.get("name")}\nالبريد: ${d.get("email")}\n\n${d.get("message")}`
+        `الاسم: ${d.get("name")}\nالبريد: ${d.get("email")}\n\n${d.get("message")}`,
       );
       window.location.href = `mailto:${form.dataset.mailto}?subject=${subject}&body=${body}`;
       const status = form.querySelector("[data-form-status]");
       if (status) status.textContent = "تم فتح برنامج البريد لإرسال الرسالة.";
     });
   }
+
+  /* ---------- مربعات الإحصاءات: قلب بالضغط (انيمشن flip-diagonal-2-tl) ---------- */
+  document.querySelectorAll(".stat").forEach((card) => {
+    const inner = card.querySelector(".stat__inner");
+    const front = card.querySelector(".stat__face--front");
+    const back = card.querySelector(".stat__face--back");
+    if (!inner || !front || !back) return;
+
+    let flipped = false; // هل المربع الآن على وجهه الخلفي (النتيجة)؟
+    let busy = false; // يمنع الضغط المتكرر أثناء دوران المربع
+
+    // قارئ الشاشة يقرأ الوجه الظاهر فقط
+    front.setAttribute("aria-hidden", "false");
+    back.setAttribute("aria-hidden", "true");
+
+    card.addEventListener("click", () => {
+      if (busy) return;
+      busy = true;
+      flipped = !flipped;
+
+      inner.classList.remove("flip-diagonal-2-tl", "flip-diagonal-2-tl-back");
+      inner.classList.add(
+        flipped ? "flip-diagonal-2-tl" : "flip-diagonal-2-tl-back",
+      );
+
+      card.setAttribute("aria-pressed", String(flipped));
+      front.setAttribute("aria-hidden", String(flipped));
+      back.setAttribute("aria-hidden", String(!flipped));
+
+      setTimeout(() => {
+        busy = false;
+      }, 420); // مدة الانيمشن 0.4 ثانية
+    });
+  });
 
   /* ---------- سنة التذييل ---------- */
   document.querySelectorAll("[data-year]").forEach((el) => {
