@@ -524,23 +524,23 @@ dialog.lightbox p { margin: 0; padding: var(--space-3) var(--space-5); }
 }
 
 /* ============================================================
-   قسم الخدمات (الصفحة الرئيسية فقط) — بطاقات فاتحة بشريط ملوّن،
-   أيقونة متدرّجة، وتمتلئ البطاقة بلون الهوية عند المرور.
-   مقيّد بـ .section--services حتى لا يمسّ بطاقات about/projects.
+   بطاقات الأقسام (الخدمات في الرئيسية، الرسالة في من نحن، قصص النجاح
+   في المشاريع) — بطاقات فاتحة بشريط ملوّن وأيقونة متدرّجة، وتمتلئ
+   بلون الهوية عند المرور. تُفعَّل بإضافة .section--cards إلى القسم.
    كل الألوان من tokens.css فقط.
    ============================================================ */
 /* شريط بلون أغمق قليلاً من الصفحة ليفصل القسم عمّا قبله وبعده وتبرز البطاقات البيضاء */
-.section--services {
+.section--cards {
   background: color-mix(in srgb, var(--color-primary) 7%, var(--color-bg));
   border-block: 1px solid var(--color-border);
 }
-.section--services .grid { counter-reset: svc; }
+.section--cards .grid { counter-reset: cardnum; }
 
-.section--services .card {
+.section--cards .card {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  counter-increment: svc;
+  counter-increment: cardnum;
   padding: var(--space-6) var(--space-5) var(--space-5);
   background: var(--color-surface);
   border-color: var(--color-border);
@@ -552,26 +552,27 @@ dialog.lightbox p { margin: 0; padding: var(--space-3) var(--space-5); }
     box-shadow 0.35s var(--ease),
     border-color 0.35s var(--ease);
 }
-.section--services .card:hover {
+.section--cards .card:hover {
   transform: translateY(-8px);
   border-color: var(--color-primary);
   box-shadow: var(--shadow-strong);
 }
 
-.section--services .card h3 {
+.section--cards .card h2,
+.section--cards .card h3 {
   margin: 0 0 var(--space-2);
   font-size: 1.35rem;
   color: var(--color-primary);
   transition: color 0.35s var(--ease);
 }
-.section--services .card p {
+.section--cards .card p {
   line-height: 1.8;
   transition: color 0.35s var(--ease);
 }
 
 /* رقم الخدمة كعلامة مائية في الزاوية */
-.section--services .card::after {
-  content: counter(svc, decimal-leading-zero);
+.section--cards .card::after {
+  content: counter(cardnum, decimal-leading-zero);
   position: absolute;
   inset-block-start: var(--space-3);
   inset-inline-end: var(--space-4);
@@ -586,7 +587,7 @@ dialog.lightbox p { margin: 0; padding: var(--space-3) var(--space-5); }
 }
 
 /* طبقة التعبئة التي تظهر عند المرور */
-.section--services .card::before {
+.section--cards .card::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -598,7 +599,7 @@ dialog.lightbox p { margin: 0; padding: var(--space-3) var(--space-5); }
   transition: opacity 0.4s var(--ease);
 }
 
-.section--services .icon {
+.section--cards .icon {
   width: 60px;
   height: 60px;
   margin-bottom: var(--space-5);
@@ -608,13 +609,14 @@ dialog.lightbox p { margin: 0; padding: var(--space-3) var(--space-5); }
   box-shadow: 0 10px 22px color-mix(in srgb, var(--color-primary) 32%, transparent);
   transition: transform 0.35s var(--ease), background 0.35s var(--ease), color 0.35s var(--ease), box-shadow 0.35s var(--ease);
 }
-.section--services .icon svg { width: 28px; height: 28px; }
+.section--cards .icon svg { width: 28px; height: 28px; }
 
-.section--services .card:hover::before { opacity: 1; }
-.section--services .card:hover h3 { color: #fff; }
-.section--services .card:hover p { color: color-mix(in srgb, var(--color-dark-contrast) 85%, transparent); }
-.section--services .card:hover::after { color: #fff; opacity: 0.1; }
-.section--services .card:hover .icon {
+.section--cards .card:hover::before { opacity: 1; }
+.section--cards .card:hover h2,
+.section--cards .card:hover h3 { color: #fff; }
+.section--cards .card:hover p { color: color-mix(in srgb, var(--color-dark-contrast) 85%, transparent); }
+.section--cards .card:hover::after { color: #fff; opacity: 0.1; }
+.section--cards .card:hover .icon {
   transform: scale(1.08) rotate(-6deg);
   color: var(--color-dark);
   background: var(--color-highlight);
@@ -622,9 +624,9 @@ dialog.lightbox p { margin: 0; padding: var(--space-3) var(--space-5); }
 }
 
 /* لمستخدمي لوحة المفاتيح: نفس تأثير المرور عند التركيز داخل البطاقة (إن أضيف رابط لاحقاً) */
-.section--services .card:focus-within::before { opacity: 1; }
+.section--cards .card:focus-within::before { opacity: 1; }
 
 @media (prefers-reduced-motion: reduce) {
-  .section--services .card:hover,
-  .section--services .card:hover .icon { transform: none; }
+  .section--cards .card:hover,
+  .section--cards .card:hover .icon { transform: none; }
 }
