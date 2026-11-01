@@ -1,25 +1,25 @@
 /* ==========================================================================
    tokens.css — هوية Smart Land (المتغيرات فقط)
-   TODO[R3]: استبدل القيم أدناه بقيم دليل الهوية المعتمد. لا تغيّر أسماء المتغيرات.
+   قيم الهوية مأخوذة من ملفات R3 (تُراجَع قبل الاعتماد النهائي). لا تغيّر أسماء المتغيرات.
    باقي ملفات CSS تقرأ من هنا فقط، فتغيير هذا الملف يغيّر مظهر الموقع كله.
    ========================================================================== */
 
 :root {
-  /* الألوان (قيم مؤقتة حتى اعتماد الهوية) */
-  --color-primary: #0b3a6f;
+  /* الألوان (من ملفات هوية R3) */
+  --color-primary: #195480;
   --color-primary-contrast: #ffffff;
-  --color-accent: #18b6a4;
+  --color-accent: #19b6a5;
   --color-accent-contrast: #062925;
-  --color-highlight: #f2a93b;
+  --color-highlight: #d8b858;
 
-  --color-bg: #f6f8fb;
+  --color-bg: #f1f6f5;
   --color-surface: #ffffff;
-  --color-dark: #08213f;
+  --color-dark: #0b2a47;
   --color-dark-contrast: #eaf1fa;
 
   --color-text: #14202e;
   --color-text-muted: #55657a;
-  --color-border: #dbe3ee;
+  --color-border: #d3e2df;
 
   /* الخطوط (Tajawal تُحمَّل من Google Fonts في رأس كل صفحة) */
   --font-body: "Tajawal", "Segoe UI", Tahoma, Arial, sans-serif;
@@ -29,8 +29,8 @@
   --radius-sm: 8px;
   --radius: 16px;
   --radius-lg: 28px;
-  --shadow: 0 10px 30px rgba(8, 33, 63, 0.10);
-  --shadow-strong: 0 18px 50px rgba(8, 33, 63, 0.22);
+  --shadow: 0 10px 30px rgba(11, 42, 71, 0.10);
+  --shadow-strong: 0 18px 50px rgba(11, 42, 71, 0.22);
 
   /* المسافات والعرض */
   --space-1: 0.25rem;
