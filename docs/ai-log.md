@@ -1,24 +1,15 @@
-# سجل استخدام الذكاء الاصطناعي
+# سجل استخدام الذكاء الاصطناعي (R7)
 
-- تم انشاء الصور عن طريق الاداة gemini كما يلي :(كلهم انشائتهم في تاريخ 10/25/2026)
+يُملأ هذا الجدول عند كل استخدام. يُستخلص منه قسم "الذكاء الاصطناعي" في التقرير (20 علامة).
 
-|1|||| hero.webp: القياس 1600×900 (نسبة 16:9)
-Wide cinematic 16:9 digital landscape: rolling hills made of glowing circuit lines and data nodes under a calm dawn sky, deep navy blue and teal gradient with small golden-orange highlights, clear empty space on the right half for text, modern, clean, professional, highly detailed, no text, no letters, no logos, no watermark
+| # | التاريخ | الأداة | الغرض | الـ Prompt (كما أُدخل) | المخرج / اسم الملف | أين استُخدم في الموقع | تعديلات بشرية |
+|---|---|---|---|---|---|---|---|
+| 1 | 2026-10-17 | Claude (Anthropic) | بناء هيكل الموقع وشيفرته وكتابة نصوص الصفحات الأولية | طلب بناء موقع ثابت لشركة Smart Land بحسب نص الوظيفة (ملخّص الطلب؛ الصق النص الحرفي هنا إن أردت) | index.html وabout.html وprojects.html وcontact.html وملفات css وjs | كل صفحات الموقع | مراجعة وتعديل من R1، وتدقيق النصوص من R7 |
+| 2 | 2026-10-21 | Claude (Anthropic) | سيناريو الفيديوهين (الجمل المعروضة كنص مرافق) وبرومبتات توليد الصور | طلب إعداد دليل للفريق يشرح المطلوب من كل دور (ملخّص الطلب) | دليل الفريق، وصيغة ملفي intro.ar.vtt وprojects.ar.vtt | الفيديوهان والنص المتزامن وتوليد الصور | يراجعه R5 وR6 وR7 ويضبطون التوقيت على الصوت الفعلي |
+| 3 | 2026-10-24 | [اكتب اسم الأداة] | صورة الواجهة الرئيسية | [الصق البرومبت كما أُدخل] | hero.webp | الصفحة الرئيسية (خلفية الواجهة) | تغيير الحجم إلى 1600×900 وتحسين الحدّة وتحويل إلى WEBP بحجم 240KB (بمساعدة Claude) |
+| 4 | 2026-10-31 | Claude (Anthropic) | تجميع فيديو التعريف وفيديو المشاريع (مشاهد وعناوين وانتقالات) بسكربتات ffmpeg وتوليد الموسيقى الخلفية برمجياً | طلب بناء الفيديوهين من صور الموقع ونص السيناريو الموجود في دليل الفريق (ملخّص الطلب) | intro.mp4 وprojects.mp4 وintro.ar.vtt وprojects.ar.vtt وposter-intro.webp وposter-projects.webp | صفحة الرئيسية وصفحة المشاريع | بدون تعليق صوتي: الصوت موسيقى خلفية مولّدة برمجياً، والنص المتزامن ظاهر على الشاشة وفي ملف الترجمة؛ حدّث الشكل والألوان بعد اعتماد الهوية (2026-11-02)، ومراجعة الشكل واعتماده |
+| 5 | 2026-11-01 | Claude (Anthropic) | تهيئة الهوية البصرية للموقع: قصّ الشعار من صورة المصممة وتحويله لمربع أيقونة، تصدير ملفات WEBP، وبناء قسم «هويتنا البصرية» وتحديث متغيرات الألوان | طلب دمج ملفات الهوية التي أرسلتها R3 في الموقع (ملخّص الطلب) | logo-main.webp وfavicon.webp وlogo-full.webp وidentity-mockup.webp وcss/tokens.css | الرأس والتذييل وصفحة من نحن | الشعار والألوان والمطبوعات من تصميم R3 دون ذكاء اصطناعي؛ المعالجة التقنية فقط بمساعدة Claude |
+| 6 | 2026-10-26 | [اكتب اسم الأداة] | صور المحتوى الست | [الصق البرومبتات كما أُدخلت لكل صورة] | about-team.webp وproject-smart-signal.webp وproject-mykey.webp وproject-sada.webp وproject-welcome.webp وproject-hospital.webp | صفحتا من نحن ومشاريعنا | التحويل إلى WEBP بحجم 1200×800 (بمساعدة Claude)، وكتابة نص بديل يوضّح أنها مولّدة بالذكاء الاصطناعي |
+| 7 | | | | | | | |
 
-|2|||| about-team.webp: القياس 1200×800 (نسبة 3:2)
-A small diverse team of software engineers and designers collaborating around a table with laptops and a large screen showing app wireframes, bright modern office with warm natural light, friendly teamwork, semi-realistic digital illustration, navy blue and teal color accents, no text, no letters, no logos, no watermark
-
-|3|||| project-smart-signal.webp: القياس 1200×800
-Close-up of two hands performing sign language gestures in front of a smartphone, the phone shows a friendly interface with speech bubbles made of abstract lines instead of words, faint glowing neural-network lines around the hands, modern flat illustration with soft gradients, navy blue and teal with golden highlights, no text, no letters, no logos, no watermark
-
-|4|||| project-mykey.webp: القياس 1200×800
-Isometric illustration of a city street with modern houses, apartment buildings and parked cars, floating map location pins and blank for-sale and for-rent sign shapes with no writing, marketplace feeling, navy blue and teal with golden pins, clean modern flat style, no text, no letters, no logos, no watermark
-
-|5|||| project-sada.webp: القياس 1200×800
-A student studying online with a laptop and tablet at a desk at home, floating icons of books, a video lesson and a graduation cap around, bright and friendly, modern flat illustration, navy blue and teal with golden accents, no text, no letters, no logos, no watermark
-
-|6|||| project-welcome.webp: القياس 1200×800
-A smartphone showing a shopping app with several small store fronts, shopping bags, a cart and a delivery box floating around it, cheerful modern flat illustration, navy blue and teal with golden accents, no text, no letters, no logos, no watermark
-
-|7|||| project-hospital.webp: القياس 1200×800
-A modern hospital management dashboard on a large monitor with charts, patient file icons and a heartbeat line, a doctor and a nurse reviewing it in a clean clinical room, professional flat illustration, navy blue and teal with golden accents, no text, no letters, no logos, no watermark
+> ملاحظة: بحسب إفادة مصممة الهوية (R3)، لم تُستخدم أي أداة ذكاء اصطناعي في رسم الشعار أو الهوية البصرية.
